@@ -17,14 +17,13 @@ if(authToken) {
   client.connectUser({
     id: cookies.get('userId'),
     name: cookies.get('username'),
-    image: cookies.get('fullName'),
-    avatarURL: cookies.get('avatarURL'),
+    fullName: cookies.get('fullName'),
+    image: cookies.get('avatarURL'),
     hashedPassword: cookies.get('hashedPassword')
   }, authToken);
 };
 
 const App = () => {
-  
   if(!authToken) return (< Auth />);
 
   return (
